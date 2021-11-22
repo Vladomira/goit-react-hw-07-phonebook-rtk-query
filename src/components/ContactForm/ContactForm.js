@@ -44,7 +44,9 @@ function ContactForm() {
       return toast.error(`This name ${name} already exists in the database`);
     }
     if (doubleNumber(number)) {
-      return toast.error(`This name ${number} already exists in the database`);
+      return toast.error(
+        `This number ${number} already exists in the database`
+      );
     }
 
     toast.success(`${name} successfully added ;)`);

@@ -37,7 +37,10 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createContact({ name, number });
+    if (!doubleName(name) && !doubleNumber(number)) {
+      createContact({ name, number });
+    }
+
     reset();
 
     if (doubleName(name)) {

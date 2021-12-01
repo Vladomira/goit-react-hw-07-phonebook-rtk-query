@@ -39,6 +39,7 @@ function ContactForm() {
     e.preventDefault();
     if (!doubleName(name) && !doubleNumber(number)) {
       createContact({ name, number });
+      scroll();
     }
 
     reset();
@@ -53,14 +54,13 @@ function ContactForm() {
     }
 
     toast.success(`${name} successfully added ;)`);
-    scroll();
+    // scroll();
 
     return;
   };
   const scroll = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
-      // top: 1000,
       behavior: "smooth",
     });
   };
